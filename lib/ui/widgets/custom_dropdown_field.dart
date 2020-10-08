@@ -4,15 +4,19 @@ class CustomDropdownField extends StatelessWidget {
   final String labelName;
   final String hintText;
   final String errorValidation;
+  final String value;
   final List<String> options;
   final Function(String) onChanged;
+  final bool isEdit;
 
   CustomDropdownField({
     this.errorValidation,
     this.onChanged,
     this.labelName,
     this.hintText,
+    this.value,
     this.options,
+    this.isEdit = false,
   });
 
   @override
@@ -45,7 +49,7 @@ class CustomDropdownField extends StatelessWidget {
             hintText,
             style: semiBoldBaseFont.copyWith(
               fontSize: 14,
-              color: Color(0xFFC6C6C6),
+              color: isEdit ? baseColor : Color(0xFFC6C6C6),
             ),
           ),
           decoration: InputDecoration(
@@ -62,6 +66,7 @@ class CustomDropdownField extends StatelessWidget {
               ),
             ),
           ),
+          value: value,
           items: options.map((String option) {
             return DropdownMenuItem(
               child: Text(

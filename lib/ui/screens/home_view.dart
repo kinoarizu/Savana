@@ -150,7 +150,7 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  height: (3 * 86 - 16).toDouble(),
+                  height: ((Hive.box<Target>('targets').values.isEmpty) ? 220 : Hive.box<Target>('targets').values.length * 86 - 16).toDouble(),
                   child: ValueListenableBuilder(
                     valueListenable: Hive.box<Target>('targets').listenable(),
                     builder: (context, Box<Target> box, _) {
@@ -200,12 +200,16 @@ class HomeView extends StatelessWidget {
                                 Navigator.pushNamed(
                                   context, DetailTargetScreen.routeName,
                                   arguments: Target(
+                                    id: index,
                                     targetName: targets.targetName,
                                     nominal: targets.nominal,
                                     period: targets.period,
                                     durationType: targets.durationType,
                                     currentMoney: targets.currentMoney,
                                     category: targets.category,
+                                    priorityLevel: targets.priorityLevel,
+                                    description: targets.description,
+                                    createdAt: targets.createdAt,
                                   ),
                                 );
                               },
@@ -245,7 +249,7 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  height: (3 * 86 - 16).toDouble(),
+                  height: ((Hive.box<Target>('targets').values.isEmpty) ? 220 : Hive.box<Target>('targets').values.length * 86 - 16).toDouble(),
                   child: ValueListenableBuilder(
                     valueListenable: Hive.box<History>('histories').listenable(),
                     builder: (context, Box<History> box, _) {

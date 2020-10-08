@@ -11,7 +11,9 @@ class _CreateSavingScreenState extends State<CreateSavingScreen> {
   TextEditingController nominalController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
 
+  Target target;
   String selectedTarget;
+  int selectedIndex;
   bool isSubmit = false;
 
   @override
@@ -111,6 +113,10 @@ class _CreateSavingScreenState extends State<CreateSavingScreen> {
                                   onChanged: (text) {
                                     setState(() {
                                       selectedTarget = text;
+                                      selectedIndex = options.indexOf(text);
+                                      target = targetBox.values.singleWhere((target) {
+                                        return target.targetName == text;
+                                      });
                                     });
                                   },
                                 ),
@@ -148,7 +154,7 @@ class _CreateSavingScreenState extends State<CreateSavingScreen> {
                                   "Masukan Tabungan",
                                   color: (validation.isAllHistoryValidate(selectedTarget)) ? baseColor : Color(0xFFCDCBCB),
                                   textColor: lightColor,
-                                  onPressed: () async {
+                                  onPressed: (validation.isAllHistoryValidate(selectedTarget)) ? () async {
                                     setState(() {
                                       isSubmit = true;
                                     });
@@ -161,6 +167,7 @@ class _CreateSavingScreenState extends State<CreateSavingScreen> {
                                     );
 
                                     History.storeHistory(history);
+                                    Target.updateCurrentMoney(selectedIndex, target, history.nominal);
                                     Provider.of<ValidationProvider>(context, listen: false).resetTargetChange();
                                     Provider.of<NavigationProvider>(context, listen: false).changeIndex(0);
                                     
@@ -169,7 +176,7 @@ class _CreateSavingScreenState extends State<CreateSavingScreen> {
                                       MainScreen.routeName,
                                       (Route<dynamic> route) => false,
                                     );
-                                  },
+                                  } : null,
                                 ),
                                 SizedBox(
                                   height: 32,

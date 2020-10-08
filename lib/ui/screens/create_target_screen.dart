@@ -204,7 +204,7 @@ class _CreateTargetScreenState extends State<CreateTargetScreen> {
                                   "Buat Target",
                                   color: (validation.isAllTargetValidate(selectedDurationType, selectedPriorityLevel)) ? baseColor : Color(0xFFCDCBCB),
                                   textColor: lightColor,
-                                  onPressed: () async {
+                                  onPressed: (validation.isAllTargetValidate(selectedDurationType, selectedPriorityLevel)) ? () async {
                                     setState(() {
                                       isSubmit = true;
                                     });
@@ -217,7 +217,7 @@ class _CreateTargetScreenState extends State<CreateTargetScreen> {
                                       currentMoney: 0,
                                       category: argument,
                                       priorityLevel: selectedPriorityLevel,
-                                      description: descriptionController.text ?? "-",
+                                      description: descriptionController.text == "" ? "-" : descriptionController.text,
                                       createdAt: DateTime.now().millisecondsSinceEpoch,
                                     );
 
@@ -230,7 +230,7 @@ class _CreateTargetScreenState extends State<CreateTargetScreen> {
                                       MainScreen.routeName,
                                       (Route<dynamic> route) => false,
                                     );
-                                  },
+                                  } : null,
                                 ),
                                 SizedBox(
                                   height: 32,

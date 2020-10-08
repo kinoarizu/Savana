@@ -57,6 +57,15 @@ class ValidationProvider extends ChangeNotifier {
     }
   }
 
+  bool isAllEditTargetValidate() {
+    if (_errorTargetName == "" && _errorNominal == "" && _errorPeriod == "") {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   bool isAllTargetValidate(String durationType, String priorityLevel) {
     if (_errorTargetName == "" && _errorNominal == "" && _errorPeriod == "" && durationType != null && priorityLevel != null) {
       return true;
@@ -64,6 +73,14 @@ class ValidationProvider extends ChangeNotifier {
     else {
       return false;
     }
+  }
+
+  void changeAllTrue() {
+    _errorTargetName = "";
+    _errorNominal = "";
+    _errorPeriod = "";
+    
+    notifyListeners();
   }
 
   void resetTargetChange() {

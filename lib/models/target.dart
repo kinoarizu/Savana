@@ -67,4 +67,24 @@ class Target {
       createdAt: target.createdAt,
     ));
   }
+
+  static void updateTarget(int index, Target target) {
+    Box<Target> targetBox = Hive.box<Target>("targets");
+    targetBox.putAt(index, Target(
+      targetName: target.targetName,
+      nominal: target.nominal,
+      period: target.period,
+      durationType: target.durationType,
+      currentMoney: target.currentMoney,
+      category: target.category,
+      priorityLevel: target.priorityLevel,
+      description: target.description,
+      createdAt: target.createdAt,
+    ));
+  }
+
+  static void deleteTarget(int index) {
+    Box<Target> targetBox = Hive.box<Target>("targets");
+    targetBox.deleteAt(index);
+  }
 }
