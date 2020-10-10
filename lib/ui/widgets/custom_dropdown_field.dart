@@ -29,7 +29,7 @@ class CustomDropdownField extends StatelessWidget {
           children: [
             Text(
               labelName,
-              style: semiBoldBaseFont.copyWith(fontSize: 14),
+              style: boldBaseFont.copyWith(fontSize: 14),
             ),
             if (errorValidation != null)
               Text(
@@ -71,7 +71,10 @@ class CustomDropdownField extends StatelessWidget {
             return DropdownMenuItem(
               child: Text(
                 option,
-                style: semiBoldBaseFont.copyWith(fontSize: 15),
+                style: semiBoldBaseFont.copyWith(
+                  fontSize: 15,
+                  color: Color(0xFF111111),
+                ),
               ),
               value: option,
             );

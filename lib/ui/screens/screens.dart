@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:savana/common/theme/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:savana/common/utils/utils.dart';
-import 'package:savana/models/models.dart';
 import 'package:savana/provider/provider.dart';
 import 'package:savana/ui/widgets/widgets.dart';
 import 'package:fl_chart/fl_chart.dart';

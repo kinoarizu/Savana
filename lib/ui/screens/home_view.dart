@@ -106,16 +106,15 @@ class HomeView extends StatelessWidget {
                         width: 60,
                         height: 60,
                         child: FloatingActionButton(
+                          elevation: 0,
                           heroTag: "btn_summary",
-                          backgroundColor: baseColor,
+                          backgroundColor: greyColor,
                           child: SvgPicture.asset(
                             "assets/svg/ic_chart.svg",
                             width: 24,
                             height: 24,
                           ),
-                          onPressed: () {
-                            Navigator.pushNamed(context, SummaryScreen.routeName);
-                          },
+                          onPressed: null,
                         ),
                       ),
                     ],
@@ -249,7 +248,7 @@ class HomeView extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  height: ((Hive.box<Target>('targets').values.isEmpty) ? 220 : Hive.box<Target>('targets').values.length * 86 - 16).toDouble(),
+                  height: ((Hive.box<History>('histories').values.isEmpty) ? 220 : Hive.box<History>('histories').values.length * 86 - 16).toDouble(),
                   child: ValueListenableBuilder(
                     valueListenable: Hive.box<History>('histories').listenable(),
                     builder: (context, Box<History> box, _) {

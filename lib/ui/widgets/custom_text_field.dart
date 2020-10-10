@@ -33,7 +33,7 @@ class CustomTextField extends StatelessWidget {
           children: [
             Text(
               labelText,
-              style: semiBoldBaseFont.copyWith(fontSize: 14),
+              style: boldBaseFont.copyWith(fontSize: 14),
             ),
             if (errorValidation != null)
               Text(
@@ -54,6 +54,7 @@ class CustomTextField extends StatelessWidget {
           keyboardType: keyboardType,
           style: semiBoldBaseFont.copyWith(
             fontSize: 14,
+            color: Color(0xFF111111),
           ),
           maxLines: (maxLines != null) ? maxLines : 1,
           onChanged: onChanged,

@@ -229,6 +229,7 @@ class _CreateTargetScreenState extends State<CreateTargetScreen> {
                                       context,
                                       MainScreen.routeName,
                                       (Route<dynamic> route) => false,
+                                      arguments: true,
                                     );
                                   } : null,
                                 ),

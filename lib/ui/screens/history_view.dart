@@ -20,31 +20,36 @@ class HistoryView extends StatelessWidget {
                 Column(
                   children: [
                     if(navigationProvider.isTargetTab) Container(
-                      height: (Hive.box<Target>('targets').values.length * 86).toDouble(),
+                      height: ((Hive.box<Target>('targets').values.isEmpty) ? 320 : Hive.box<Target>('targets').values.length * 86).toDouble(),
                       child: ValueListenableBuilder(
                         valueListenable: Hive.box<Target>('targets').listenable(),
                         builder: (context, Box<Target> box, _) {
                           if (box.values.isEmpty) {
                             return Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    "assets/svg/no_data_illustration.svg",
-                                    width: 180,
-                                  ),
-                                  SizedBox(
-                                    height: 7,
-                                  ),
-                                  Text(
-                                  "Kamu Belum Ada\nTarget Tabungan",
-                                  textAlign: TextAlign.center,
-                                    style: semiBoldBaseFont.copyWith(
-                                      color: greyColor,
-                                      fontSize: 14,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 80,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset(
+                                      "assets/svg/no_data_illustration.svg",
+                                      width: 180,
                                     ),
-                                  ),
-                                ],
+                                    SizedBox(
+                                      height: 7,
+                                    ),
+                                    Text(
+                                    "Kamu Belum Ada\nTarget Tabungan",
+                                    textAlign: TextAlign.center,
+                                      style: semiBoldBaseFont.copyWith(
+                                        color: greyColor,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             );
                           }
@@ -90,31 +95,36 @@ class HistoryView extends StatelessWidget {
                         }
                       ),
                     ) else Container(
-                      height: (Hive.box<History>('histories').values.length * 86).toDouble(),
+                      height: ((Hive.box<History>('histories').values.isEmpty) ? 320 : Hive.box<History>('histories').values.length * 86).toDouble(),
                       child: ValueListenableBuilder(
                         valueListenable: Hive.box<History>('histories').listenable(),
                         builder: (context, Box<History> box, _) {
                           if (box.values.isEmpty) {
                             return Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SvgPicture.asset(
-                                    "assets/svg/no_data_illustration.svg",
-                                    width: 180,
-                                  ),
-                                  SizedBox(
-                                    height: 7,
-                                  ),
-                                  Text(
-                                  "Kamu Belum Ada\nRiwayat Tabungan",
-                                  textAlign: TextAlign.center,
-                                    style: semiBoldBaseFont.copyWith(
-                                      color: greyColor,
-                                      fontSize: 14,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 80,
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.asset(
+                                      "assets/svg/no_data_illustration.svg",
+                                      width: 180,
                                     ),
-                                  ),
-                                ],
+                                    SizedBox(
+                                      height: 7,
+                                    ),
+                                    Text(
+                                    "Kamu Belum Ada\nRiwayat Tabungan",
+                                    textAlign: TextAlign.center,
+                                      style: semiBoldBaseFont.copyWith(
+                                        color: greyColor,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             );
                           }
