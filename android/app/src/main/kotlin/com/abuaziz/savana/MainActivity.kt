@@ -1,4 +1,4 @@
-package com.abuaziz.savana
+package com.kinoarizu.savana
 
 import io.flutter.embedding.android.FlutterActivity
 

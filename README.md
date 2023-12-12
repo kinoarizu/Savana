@@ -1,14 +1,11 @@
 # Savana
 
-[![Fork](https://img.shields.io/github/forks/abuazis/Savana?style=social)](https://github.com/abuazis/Savana/fork)&nbsp; [![Star](https://img.shields.io/github/stars/abuazis/Savana?style=social)](https://github.com/abuazis/Savana/star)&nbsp; [![Watches](https://img.shields.io/github/watchers/abuazis/Savana?style=social)](https://github.com/abuazis/Savana/)&nbsp;
+[![Fork](https://img.shields.io/github/forks/kinoarizu/Savana?style=social)](https://github.com/kinoarizu/Savana/fork)&nbsp; [![Star](https://img.shields.io/github/stars/kinoarizu/Savana?style=social)](https://github.com/kinoarizu/Savana/star)&nbsp; [![Watches](https://img.shields.io/github/watchers/kinoarizu/Savana?style=social)](https://github.com/kinoarizu/Savana/)&nbsp;
 
 > Simpan dan Wujudkan Targetmu
 
 ## Description
 Savana adalah aplikasi tabungan berbasis mobile yang digunakan pengguna untuk mencatat keperluan target yang ingin dibeli dengan tabungan. Pengguna akan memasukan data rutinitas menabung setiap hari dari target yang ingin dicapainya berdasarkan nominal yang disarankan oleh aplikasi ini.
-
-## Demo
-Get GoAbsensi on PlayStore <a href="https://play.google.com/store/apps/details?id=com.abuaziz.savana">https://play.google.com/store/apps/details?id=com.abuaziz.savana</a>
 
 <p><img  src="https://i.ibb.co/NTZNKZ6/Savana-Feature-Graphic.png"/></p>
 
@@ -28,7 +25,7 @@ Get GoAbsensi on PlayStore <a href="https://play.google.com/store/apps/details?i
 
 ## Installing
 
-- git clone https://github.com/abuazis/Savana.git
+- git clone https://github.com/kinoarizu/Savana.git
 - flutter packages get
 - flutter run
 
@@ -36,11 +33,3 @@ Get GoAbsensi on PlayStore <a href="https://play.google.com/store/apps/details?i
 
 - 1.0.0+1
   - CHANGE: APK release
-
-## Credit
-
-Abu Azis – [@abuzaio](https://instagram.com/abuzaio) – abuaziscorp@gmail.com
-
-Distributed under the MIT license. See `LICENSE` for more information.
-
-[https://github.com/abuazis](https://github.com/abuazis/)
